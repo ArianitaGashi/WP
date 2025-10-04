@@ -4,4 +4,12 @@ function ds_style(){
 }
 
 add_action('wp_enqueue_scripts', 'ds_style');
+
+function ds_menu(){
+    register_nav_menus( array(
+    'primary'=>'Primary Menu')
+);
+}
+
+add_action('after_theme_setup', 'ds_menu');
 ?>

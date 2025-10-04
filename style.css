@@ -43,3 +43,89 @@ body{
     color: #1e3c8c;
     text-decoration: underline;
 }
+
+/* The UL that WordPress outputs */
+.site-nav .main-menu {
+  list-style: none;
+  display: block;                  /* vertical stack */
+}
+
+/* Top-level items */
+.site-nav .main-menu > li {
+  margin: 10px 0;                   /* space between items */
+}
+
+/* Links */
+.site-nav .main-menu > li > a {
+  display: block;                  /* whole row clickable */
+  padding: 10px 12px;
+  color: #06206a;
+  font-weight: 600;
+  text-decoration: none;           /* no underline */
+  border-radius: 6px;
+}
+
+/* Hover/focus state */
+.site-nav .main-menu > li > a:hover,
+.site-nav .main-menu > li > a:focus {
+  background: #c3e1eb;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Active/current page (WordPress adds these classes on <li>) */
+.site-nav .main-menu > li.current-menu-item > a,
+.site-nav .main-menu > li.current_page_item > a,
+.site-nav .main-menu > li.current-menu-ancestor > a {
+  background: #ffffff;
+  color: #06206a;
+  text-decoration: none;
+}
+
+/* ===== Submenus (dropdowns) ===== */
+.site-nav .main-menu li { position: relative; }
+
+.site-nav .main-menu li .sub-menu {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 6px;
+  display: none;                   /* hidden by default */
+  background: #f5f8ff;
+  border: 1px solid #dbe7f5;
+  border-radius: 8px;
+}
+
+/* Show submenu on hover/focus (desktop) */
+.site-nav .main-menu > li:hover > .sub-menu,
+.site-nav .main-menu > li:focus-within > .sub-menu {
+  display: block;
+}
+
+/* Submenu items */
+.site-nav .main-menu .sub-menu li a {
+  display: block;
+  padding: 8px 10px;
+  color: #06206a;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.site-nav .main-menu .sub-menu li a:hover,
+.site-nav .main-menu .sub-menu li a:focus {
+  background: #e8f1ff;
+  text-decoration: none;
+}
+
+/* ===== Optional: make it horizontal on wide screens ===== */
+@media (min-width: 768px) {
+  .site-nav .main-menu { display: flex; gap: 16px; align-items: center; }
+  .site-nav .main-menu > li { margin: 0; }
+  .site-nav .main-menu li .sub-menu {
+    position: absolute; top: 100%; left: 0; margin: 8px 0 0; width: 220px;
+    display: none;      
+  }
+}
+
+
+
+
